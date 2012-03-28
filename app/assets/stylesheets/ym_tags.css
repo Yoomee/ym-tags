@@ -1,0 +1,6 @@
+a.tag:hover {
+  text-decoration: none;
+}
+.tag_title .tag_label {
+  font-size: inherit;
+}
