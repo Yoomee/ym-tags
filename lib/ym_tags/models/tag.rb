@@ -4,7 +4,7 @@ module YmTags::Tag
   include ERB::Util
   
   def to_s
-    name
+    name.gsub("-", " ")
   end
   
   def to_param
