@@ -1,6 +1,7 @@
 module TagsHelper
   
   def link_to_tag(tag_object, options = {})
+    tag_object = tag_object.to_tag
     active = options.delete(:active)
     options[:class] = "tag #{options[:class]}".strip
     link_to(tag_object, options) do

@@ -17,6 +17,13 @@ module ActsAsTaggableOn
 
   end
 end
+module ActsAsTaggableOn
+  class Tag < ActiveRecord::Base
+    def to_tag
+      ::Tag.find(id)
+    end
+  end
+end
 
 ActsAsTaggableOn::Tag.remove_unused = true
 ActsAsTaggableOn::TagList.force_lowercase = true
