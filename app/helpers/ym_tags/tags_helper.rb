@@ -1,4 +1,4 @@
-module TagsHelper
+module YmTags::TagsHelper
   
   def link_to_tag(tag_object, options = {})
     tag_object = tag_object.to_tag
@@ -10,7 +10,7 @@ module TagsHelper
   end
   
   def tag_label(tag_or_html, options = {})
-    options[:class] = "label tag_label #{options[:class]}".strip
+    options[:class] = "label tag-label #{options[:class]}".strip
     if options.delete(:active)
       options[:class] << " label-success"
     end
