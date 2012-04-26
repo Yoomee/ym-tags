@@ -1,5 +1,5 @@
 -current_tag ||= nil
-%ul.tag-list.unstyled
+%ul.tag-list
   -tags.each do |tag|
     %li
       =link_to_tag(tag, :active => tag==current_tag)

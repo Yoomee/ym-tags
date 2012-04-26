@@ -1,6 +1,17 @@
 a.tag:hover {
   text-decoration: none;
 }
-.tag_title .tag_label {
+.tag-title .tag-label {
   font-size: inherit;
+}
+.tag-list {
+  margin-left: 0;
+  list-style: none;
+}
+.tag-list li {
+  list-style: none;
+}
+.tag-list-horizontal li {
+  float: left;
+  margin-right: 5px; 
 }
