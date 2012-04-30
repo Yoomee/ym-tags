@@ -1,4 +1,11 @@
-a.tag:hover {
+/* @override http://localhost:3000/assets/ym_tags.css?body=1 */
+
+a.tag, .tag-label {  
+     -webkit-transition: .1s ease-in;
+     -moz-transition: .1s ease-in;
+     transition: .1s ease-in;
+}
+a.tag:hover, a.tag:hover .tag-label  {
   text-decoration: none;
 }
 .tag-title .tag-label {
@@ -10,8 +17,19 @@ a.tag:hover {
 }
 .tag-list li {
   list-style: none;
+  float: left;
+  clear: left;
+  margin: 0 0 5px;
 }
 .tag-list-horizontal li {
   float: left;
+  clear: none;
   margin-right: 5px; 
 }
+
+a.tag .tag-label {
+	padding: 3px 8px 4px;
+	float: left;
+	text-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+}
+
