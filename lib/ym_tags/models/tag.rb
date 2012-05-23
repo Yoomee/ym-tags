@@ -3,6 +3,10 @@ module YmTags::Tag
   
   include ERB::Util
   
+  def self.included(base)
+    base.scope :contexts, lambda {|contexts| base.joins(:taggings).where(["taggings.context IN (?)", [*contexts]]).group('tags.id')}
+  end
+  
   def to_s
     name.gsub("-", " ")
   end

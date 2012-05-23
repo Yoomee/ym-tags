@@ -17,4 +17,9 @@ module YmTags::TagsHelper
     content_tag(:span, tag_or_html, options)
   end
   
+  def tag_list_options(context, resource, tags = nil)
+    tags ||= Tag.contexts(context)
+    (tags.collect(&:name) + resource.send("#{context.to_s.singularize}_list")).uniq.sort
+  end  
+  
 end
