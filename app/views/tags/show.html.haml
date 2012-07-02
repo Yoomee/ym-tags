@@ -1,5 +1,6 @@
+-title "Tag - #{current_tag}"
 .container
   .row
-    .span8
-      %h1.tag-title
-        =tag_label(title(current_tag.to_s))
+    .span2
+      %h3.mb-1 Top tags
+      =render("tags/list", :tags => Tag.most_used.limit(10), :current_tag => current_tag)    

@@ -5,6 +5,7 @@ module YmTags::Tag
   
   def self.included(base)
     base.scope :contexts, lambda {|contexts| base.joins(:taggings).where(["taggings.context IN (?)", [*contexts]]).group('tags.id')}
+    base.scope :most_used, base.joins(:taggings).select("tags.*, COUNT(taggings.id) as tag_count").order('tag_count DESC').group('tags.id')
   end
   
   def to_s
