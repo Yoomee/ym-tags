@@ -21,9 +21,7 @@ module YmTags::TagsHelper
   end
   
   def tag_list_options(contexts, resource, tags = nil)
-    tags ||= Tag.contexts(contexts)
-    resource_tags = [*contexts].collect {|context| resource.send("#{context.to_s.singularize}_list")}
-    (tags.collect(&:name) + resource_tags.flatten).uniq.sort
+    Tag.tag_list_options(contexts, resource, tags)
   end  
   
 end

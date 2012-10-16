@@ -21,6 +21,11 @@ a.tag:hover, a.tag:hover .tag-label  {
   clear: left;
   margin: 0 0 5px;
 }
+.tag-list-horizontal {
+  list-style: none;
+  margin-left: 0;
+  margin-bottom: 20px;
+}
 .tag-list-horizontal li {
   float: left;
   clear: none;
@@ -32,4 +37,3 @@ a.tag .tag-label {
 	float: left;
 	text-shadow: 0px 1px 1px rgba(0,0,0,0.1);
 }
-
