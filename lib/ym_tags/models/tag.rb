@@ -9,7 +9,11 @@ module YmTags::Tag
   end
   
   def to_s
-    name.gsub("-", " ")
+    if ActsAsTaggableOn::TagList.force_parameterize
+      name.gsub("-", " ")
+    else
+      name
+    end
   end
   
   def to_param
