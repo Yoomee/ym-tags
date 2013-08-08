@@ -1,6 +1,6 @@
--title "Tag - #{current_tag}"
+-title "Tag - #{@tag}"
 .container
   .row
     .span2
       %h3.mb-1 Top tags
-      =render("tags/list", :tags => Tag.most_used.limit(10), :current_tag => current_tag)    
+      =render("tags/list", :tags => Tag.most_used.limit(10), :current_tag => @tag)
