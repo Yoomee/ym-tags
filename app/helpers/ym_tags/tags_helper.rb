@@ -12,7 +12,7 @@ module YmTags::TagsHelper
   
   def tag_label(tag_or_html, options = {})
     options[:method] ||= :to_s
-    tag_or_html = tag_or_html.to_s.send(options[:method]) if tag_or_html.is_a?(Tag)
+    tag_or_html = tag_or_html.to_s.send(options[:method]) if tag_or_html.is_a?(::Tag)
     options[:class] = "label tag-label #{options[:class]}".strip
     if options.delete(:active)
       options[:class] << " label-success"
