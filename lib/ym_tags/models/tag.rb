@@ -5,7 +5,7 @@ module YmTags::Tag
   
   def self.included(base)
     base.scope :contexts, lambda {|contexts| base.joins(:taggings).where(["taggings.context IN (?)", [*contexts]]).group('tags.id')}
-    base.scope :most_used, base.joins(:taggings).select("tags.*, COUNT(taggings.id) as tag_count").order('tag_count DESC').group('tags.id')
+    base.scope :most_used, lambda { base.joins(:taggings).select("tags.*, COUNT(taggings.id) as tag_count").order('tag_count DESC').group('tags.id') }
     base.scope :for_post_target, lambda {|target| base.joins(:taggings).joins("INNER JOIN posts ON (taggable_id = posts.id AND taggable_type = 'Post')").where(["posts.target_type = ? AND posts.target_id = ?", target.class.to_s, target.id])}
     base.send(:extend, ClassMethods)
   end
