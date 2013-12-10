@@ -23,5 +23,10 @@ module YmTags::TagsHelper
   def tag_list_options(contexts, resource, tags = nil)
     Tag.tag_list_options(contexts, resource, tags)
   end  
-  
+
+  def tag_list_to_sentence(tag_list, options = {})
+    options.reverse_merge!(:last_word_connector => ' & ')
+    tag_list.order(:name).to_sentence(options)    
+  end
+
 end
