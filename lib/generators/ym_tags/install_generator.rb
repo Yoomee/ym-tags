@@ -2,7 +2,7 @@ module YmTags
   module Generators
     class InstallGenerator < Rails::Generators::Base
       
-      system("bundle exec rails generate acts_as_taggable_on:migration")
+      system("bundle exec rake acts_as_taggable_on_engine:install:migrations")
       
       source_root File.expand_path("../templates", __FILE__)
       desc "Installs YmTags."
